@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática-Questão</title>
+    <link rel="stylesheet" href="Questao.css">
+</head>
+
+<body>
+    <section>
+        <div class="conteiner_titulo">
+            <div class="titulo">
+                <h1>Matemática Divertida!</h1>
+            </div>
+            <p>Pratique e aprenda as operações básicas</p>
+        </div>
+        <br>
+        <br>
+        <div class="conteiner_menu_questao">
+
+            <div class="icon">
+                <div class="img_icon" id="acertos">
+                    <img src="imagems/estrela.svg" alt="">
+                </div>
+                <div class="titulo_icon">
+                    <p>Acertos</p>
+                    <h2 id="CampoAcertos">0</h2>
+                </div>
+            </div>
+            
+            <div class="icon">
+                <div class="img_icon" id="erro">
+                    <img src="imagems/error.png" alt="">
+                </div>
+                <div class="titulo_icon">
+                    <p>Erros</p>
+                    <h2 id="CampoErros">0</h2>
+                </div>
+            </div>
+
+            <div class="icon">
+                <div class="img_icon" id="aprove">
+                    <img src="imagems/trofeu.svg" alt="">
+                </div>
+                <div class="titulo_icon">
+                    <p>Aproveitamento</p>
+                    <h2 id="CampoAproveitamento">0</h2>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="questao">
+            <p>Resolva a conta:</p>
+
+            <div class="expressao">
+                <div class="num">
+                    <span id="num1"></span>
+                </div>
+
+                <div class="sinal">
+                    <span id="sinal"></span>
+                </div>
+
+                <div class="num">
+                    <span id="num2"></span>
+                </div>
+
+                <div class="igualdade">
+                    <span>=</span>
+                </div>
+
+                <div class="resultado">
+                    <input type="number" id="Input_resultado" placeholder="">
+                </div>
+            </div>
+            
+            <div class="btn_submit">
+                <button id="verificarConta">Verificar</button>
+            </div>
+
+        </div>
+
+        <div class="Btn_reiniciar">
+            <button id="Btn_reiniciar"><img src="imagems/rotate-ccw.svg" alt="">Reiniciar Pontuação</button>
+        </div>
+
+    </section>
+
+    <script src="Javascript/Questao.js" defer></script>
+</body>
+
+</html>

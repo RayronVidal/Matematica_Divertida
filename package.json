@@ -1,0 +1,27 @@
+{
+  "name": "matproj",
+  "version": "1.0.0",
+  "description": "Meu app Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.matproj.app",
+    "productName": "MatProj",
+    "linux": {
+      "target": ["AppImage"],
+      "category": "Utility"
+    }
+  },
+  "keywords": [],
+  "author": "Rayron",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^41.0.4",
+    "electron-builder": "^24.13.3"
+  }
+}

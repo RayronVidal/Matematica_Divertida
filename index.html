@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática-Divertida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+    <section>
+        <div class="conteiner_titulo">
+            <div class="titulo">
+                <h1>Matemática Divertida!</h1>
+            </div>
+            <p>Pratique e aprenda as operações básicas</p>
+        </div>
+        <br>
+        <br>
+        <div class="conteiner_menu">
+            <p id="texto">Escolha as operaçôes:</p>
+
+            <div class="opcoes">
+
+                <label id="adicao" class="operacao" onclick="Trocar_icon()">
+                    <input type="checkbox" value="+" id="add">
+                    <h2>+</h2>
+                    <p>Adição</p>
+                </label>
+
+                <label id="subtracao" class="operacao">
+                    <input type="checkbox" value="-" id="sub">
+                    <h2>-</h2>
+                    <p>Subtração</p>
+                </label>
+
+                <label id="multiplicacao" class="operacao">
+                    <input type="checkbox" value="*" id="mult">
+                    <h2>&#215</h2>
+                    <p>Multiplicação</p>
+                </label>
+
+                <label id="divisao" class="operacao">
+                    <input type="checkbox" value="/" id="divis">
+                    <h2><span>&#247;</span></h2>
+                    <p>Divisão</p>
+                </label>
+            </div>
+            <div class="btn_start" id="btn_start">
+                <img src="src/imagems/play.svg" alt="">
+                <p>Começar a Praticar!</p>
+            </div>
+        </div>
+    </section>
+    <script src="src/Javascript/script.js" defer></script>
+</body>
+
+</html>
