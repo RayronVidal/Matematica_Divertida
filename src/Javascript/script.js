@@ -10,7 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
         { nome: "Divisão", ativo: false }
     ];
 
-    const Escolhas = [];
+    const Nivel = [
+        { nome: "facil", ativo: false },
+        { nome: "dificil", ativo: false }
+    ];
+
+    let Escolhas = [];
 
     function Pegar_Operacoes() {
 
@@ -19,26 +24,38 @@ document.addEventListener("DOMContentLoaded", function () {
         Operacoes[2].ativo = document.getElementById('mult').checked;
         Operacoes[3].ativo = document.getElementById('divis').checked;
 
-        Verificar_Escolhas();
+        Nivel[0].ativo = document.getElementById('facil').checked;
+        Nivel[1].ativo = document.getElementById('dificil').checked;
 
-        //window.location.href = "src/Questao.html";
-    };
+        Verificar_Escolhas();
+    }
 
     function Verificar_Escolhas() {
+
+        Escolhas = []; // 🔥 limpa antes de adicionar
+
         for (let i = 0; i < Operacoes.length; i++) {
             if (Operacoes[i].ativo) {
                 Escolhas.push(Operacoes[i].nome);
-                //alert("Fazer " + Operacoes[i].nome);
             }
         }
-        console.log(Escolhas);
-        Gerar_Contas()
-    };
 
+        // validações
+        if (Escolhas.length === 0) {
+            alert("Escolha pelo menos uma operação!");
+            return;
+        }
+
+        if (!Nivel[0].ativo && !Nivel[1].ativo) {
+            alert("Escolha um nível!");
+            return;
+        }
+
+        console.log("Operações:", Escolhas);
+        Gerar_Contas();
+    }
 
     function Gerar_Contas() {
-
-        if (Escolhas.length === 0) return;
 
         let questoes = [];
 
@@ -46,15 +63,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let operacao = Escolhas[Math.floor(Math.random() * Escolhas.length)];
 
-            let numero1 = Math.floor(Math.random() * 10);
-            let numero2 = Math.floor(Math.random() * 10);
+            let numero1, numero2; // 🔥 fora do if
 
-            /*if (operacao === "Subtração" && numero1 < numero2) {
+            // nível
+            if (Nivel[0].ativo) {
+                numero1 = Math.floor(Math.random() * 10);
+                numero2 = Math.floor(Math.random() * 10);
+            }
+            else if (Nivel[1].ativo) {
+                numero1 = Math.floor(Math.random() * 90) + 10;
+                numero2 = Math.floor(Math.random() * 90) + 10;
+            }
+
+            // evitar negativo na subtração
+            if (operacao === "Subtração" && numero1 < numero2) {
                 [numero1, numero2] = [numero2, numero1];
-            }*/
+            }
 
-            if (operacao === "Divisão" && numero2 === 0) {
-                numero2 = 1;
+            // corrigir divisão
+            if (operacao === "Divisão") {
+                if (numero2 === 0) numero2 = 1;
+
+                // garante divisão exata
+                numero1 = numero1 * numero2;
             }
 
             questoes.push({
@@ -64,14 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        // salva todas as questões
         localStorage.setItem("questoes", JSON.stringify(questoes));
-
-        // começa na questão 0
         localStorage.setItem("indice", 0);
 
         window.location.href = "src/Questao.html";
-    };
-
+    }
 
 });

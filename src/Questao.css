@@ -190,6 +190,50 @@ img {
     background: linear-gradient(90deg, hsl(259, 100%, 42%) 0%, #c900c9 50%);
 }
 
+@media (max-width: 768px) {
+    img {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .titulo {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .questao {
+        width: 100%;
+        margin: auto;
+        padding: 11px;
+        gap: 18px;
+    }
+
+    .expressao {
+        gap: 0px;
+        font-size: 35px;
+        padding: 5px;
+        width: 90%;
+    }
+
+    .num {
+        padding: 0px;
+        background-color: transparent;
+    }
+
+    #Input_resultado {
+        font-size: 30px;
+        width: 70px;
+        margin: 10px;
+    }
+
+    .conteiner_menu_questao {
+      width: 100%;
+      margin: auto;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+}
 
 
 
